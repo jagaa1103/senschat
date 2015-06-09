@@ -19,6 +19,9 @@
 		113B64BC1B26CE3500F0ADE7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113B64BB1B26CE3500F0ADE7 /* Security.framework */; };
 		113B64BE1B26CE4100F0ADE7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113B64BD1B26CE4100F0ADE7 /* SystemConfiguration.framework */; };
 		113B64C01B26CE4B00F0ADE7 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113B64BF1B26CE4B00F0ADE7 /* Firebase.framework */; };
+		113B64C61B26CFA400F0ADE7 /* FireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113B64C51B26CFA400F0ADE7 /* FireService.swift */; };
+		11A440DD1B26D46C00B6FEFF /* RoomsCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A440DC1B26D46C00B6FEFF /* RoomsCtrl.swift */; };
+		11A440DF1B26D48D00B6FEFF /* MessagesCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A440DE1B26D48D00B6FEFF /* MessagesCtrl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		113B64BD1B26CE4100F0ADE7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		113B64BF1B26CE4B00F0ADE7 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = SensChat/Firebase.framework; sourceTree = "<group>"; };
 		113B64C21B26CECB00F0ADE7 /* SensChat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SensChat-Bridging-Header.h"; sourceTree = "<group>"; };
+		113B64C51B26CFA400F0ADE7 /* FireService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireService.swift; sourceTree = "<group>"; };
+		11A440DC1B26D46C00B6FEFF /* RoomsCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomsCtrl.swift; sourceTree = "<group>"; };
+		11A440DE1B26D48D00B6FEFF /* MessagesCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesCtrl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,8 @@
 		113B64921B26C90700F0ADE7 /* SensChat */ = {
 			isa = PBXGroup;
 			children = (
+				11A440DB1B26D44000B6FEFF /* Views */,
+				113B64C71B26D0C700F0ADE7 /* Services */,
 				113B64951B26C90700F0ADE7 /* AppDelegate.swift */,
 				113B64971B26C90700F0ADE7 /* ViewController.swift */,
 				113B64991B26C90700F0ADE7 /* Main.storyboard */,
@@ -144,6 +152,23 @@
 				113B64B51B26CE1000F0ADE7 /* libicucore.dylib */,
 			);
 			name = frameworks;
+			sourceTree = "<group>";
+		};
+		113B64C71B26D0C700F0ADE7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				113B64C51B26CFA400F0ADE7 /* FireService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		11A440DB1B26D44000B6FEFF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				11A440DC1B26D46C00B6FEFF /* RoomsCtrl.swift */,
+				11A440DE1B26D48D00B6FEFF /* MessagesCtrl.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,8 +271,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				113B64C61B26CFA400F0ADE7 /* FireService.swift in Sources */,
 				113B64981B26C90700F0ADE7 /* ViewController.swift in Sources */,
 				113B64961B26C90700F0ADE7 /* AppDelegate.swift in Sources */,
+				11A440DD1B26D46C00B6FEFF /* RoomsCtrl.swift in Sources */,
+				11A440DF1B26D48D00B6FEFF /* MessagesCtrl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +409,7 @@
 				);
 				INFOPLIST_FILE = SensChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SensChat/SensChat-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -398,6 +427,7 @@
 				);
 				INFOPLIST_FILE = SensChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SensChat/SensChat-Bridging-Header.h";
 			};
@@ -456,6 +486,7 @@
 				113B64B11B26C90700F0ADE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		113B64B21B26C90700F0ADE7 /* Build configuration list for PBXNativeTarget "SensChatTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +495,7 @@
 				113B64B41B26C90700F0ADE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
