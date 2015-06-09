@@ -11,6 +11,7 @@ import Foundation
 class FireService: NSObject {
     
     var firebase:Firebase = Firebase(url:"https://senschat.firebaseio.com")
+
     
     class var sharedInstance: FireService {
         struct Static {
@@ -30,13 +31,23 @@ class FireService: NSObject {
         println("started FireService")
     }
     
-    func writeFire(msg:String){
-        firebase.setValue("Do you have data? You'll love Firebase.")
+    func writeFire(username:String, msg:String){
+        var data:NSDictionary = ["username":username, "msg":msg]
+//        firebase_msg.setValue(data)
+        var firebase_messages = firebase.childByAppendingPath("messages")
+        var messages = firebase_messages.childByAutoId();
+        messages.setValue(data)
+        
+        self.readFire()
     }
     func readFire(){
+        var messages:AnyObject?
         firebase.observeEventType(.Value, withBlock: {
-            snapshot in
-            println("\(snapshot.key) -> \(snapshot.value)")
+            res in
+//            println("\(res.key) -> \(res.value)")
+            messages = res
+            println(messages)
+            
         })
     }
 }

@@ -31,11 +31,80 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="202.66666666666666" y="317.13333333333333"/>
+            <point key="canvasLocation" x="-184" y="291"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="c2x-mX-fAH">
+            <objects>
+                <viewController storyboardIdentifier="RoomView" id="ifc-bB-wfQ" customClass="RoomsCtrl" customModule="SensChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ytQ-wT-8H8"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jie-4P-cUU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rdd-6r-9eu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ab7-eI-uTC">
+                                <rect key="frame" x="113" y="213" width="95" height="30"/>
+                                <state key="normal" title="Go Messages">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goMessagesClicked:" destination="ifc-bB-wfQ" eventType="touchUpInside" id="csn-tn-Bcv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="yDR-Oy-EZl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="euQ-I5-1Pt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="702" y="467"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="sAb-hd-seZ">
+            <objects>
+                <viewController id="qz3-JG-RfT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FN0-gG-mob"/>
+                        <viewControllerLayoutGuide type="bottom" id="arl-Bu-eC6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1X4-EN-vVk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="Q4a-w4-p8C"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sRY-xu-pUD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="702" y="-199"/>
+        </scene>
+        <!--Main Tab View-->
+        <scene sceneID="W38-SS-r5L">
+            <objects>
+                <tabBarController storyboardIdentifier="MainTabView" id="U6Y-ew-FSU" customClass="MainTabView" customModule="SensChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="yRr-pi-Pos">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="qz3-JG-RfT" kind="relationship" relationship="viewControllers" id="2z7-rZ-Q5j"/>
+                        <segue destination="ifc-bB-wfQ" kind="relationship" relationship="viewControllers" id="RCz-pi-BzD"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uCY-Xw-Tqh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="198" y="291"/>
         </scene>
         <!--Messages Ctrl-->
         <scene sceneID="k1J-cy-ZlP">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="50f-dx-pBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="MessagesView" id="EJg-vD-I2s" customClass="MessagesCtrl" customModule="SensChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hDf-jE-jbO"/>
@@ -46,12 +115,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6gn-fl-8TY">
-                                <rect key="frame" x="78" y="144" width="164" height="30"/>
+                                <rect key="frame" x="24" y="194" width="224" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vo6-iR-X8S">
-                                <rect key="frame" x="137" y="213" width="34" height="30"/>
+                                <rect key="frame" x="262" y="194" width="34" height="30"/>
                                 <state key="normal" title="send">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -66,38 +135,8 @@
                         <outlet property="textField" destination="6gn-fl-8TY" id="BqS-aH-nXx"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="50f-dx-pBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="924" y="317"/>
-        </scene>
-        <!--Rooms Ctrl-->
-        <scene sceneID="qQ7-Qx-BaG">
-            <objects>
-                <viewController storyboardIdentifier="RoomsView" id="Qco-PA-NgV" customClass="RoomsCtrl" customModule="SensChat" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="IYV-bV-bB3"/>
-                        <viewControllerLayoutGuide type="bottom" id="cfy-I4-7Vc"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ApI-N3-4hA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzu-1r-A6d">
-                                <rect key="frame" x="110" y="114" width="88" height="30"/>
-                                <state key="normal" title="goMessages">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="goMessagesClicked:" destination="Qco-PA-NgV" eventType="touchUpInside" id="k2I-jv-Rnw"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="z01-AU-79Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="562" y="317"/>
+            <point key="canvasLocation" x="1104" y="467"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -11,10 +11,12 @@ import UIKit
 
 class MessagesCtrl: UIViewController{
     @IBOutlet weak var textField: UITextField!
+    
     override func viewDidLoad() {
-        println("MessagesCtrl")
     }
     @IBAction func sendMessage(sender: AnyObject) {
-        
+        var username = "Jagaa"
+        FireService.sharedInstance.writeFire(username, msg:textField.text)
+        textField.text = ""
     }
 }

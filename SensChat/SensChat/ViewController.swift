@@ -24,8 +24,8 @@ class ViewController: UIViewController {
     
     
     @IBAction func startClicked(sender: AnyObject) {
-        
+        var vc = self.storyboard?.instantiateViewControllerWithIdentifier("MainTabView") as! MainTabView
+        self.presentViewController(vc, animated: true, completion: nil)
     }
-
 }
 
