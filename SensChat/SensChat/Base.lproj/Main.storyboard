@@ -16,22 +16,94 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gqi-MH-LuA">
-                                <rect key="frame" x="137" y="187" width="31" height="30"/>
-                                <state key="normal" title="start">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZyV-xx-aeK">
+                                <rect key="frame" x="112" y="125" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qg8-Xm-gi8">
+                                <rect key="frame" x="112" y="163" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vON-Ko-Zvz">
+                                <rect key="frame" x="132" y="87" width="57" height="30"/>
+                                <state key="normal" title="Register">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="startClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="enO-wh-TAH"/>
+                                    <action selector="registerClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="y1p-Of-NGT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gqi-MH-LuA">
+                                <rect key="frame" x="141" y="201" width="38" height="30"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="PUH-mS-xfF"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="password" destination="Qg8-Xm-gi8" id="wPE-V2-9jt"/>
+                        <outlet property="username" destination="ZyV-xx-aeK" id="YH4-d7-H3c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-184" y="291"/>
+        </scene>
+        <!--Register Ctrl-->
+        <scene sceneID="hki-j8-D5f">
+            <objects>
+                <viewController storyboardIdentifier="RegisterView" id="fP4-PJ-eFC" customClass="RegisterCtrl" customModule="SensChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EwS-2c-pZc"/>
+                        <viewControllerLayoutGuide type="bottom" id="OUw-gF-T06"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="po2-2w-JdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tKC-Qn-8Bz">
+                                <rect key="frame" x="104" y="137" width="120" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8zc-bx-emz">
+                                <rect key="frame" x="104" y="187" width="120" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="repassword" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Es5-0q-k0I">
+                                <rect key="frame" x="104" y="233" width="120" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2O-pb-Pea">
+                                <rect key="frame" x="134" y="279" width="52" height="30"/>
+                                <state key="normal" title="register">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="registerClicked:" destination="fP4-PJ-eFC" eventType="touchUpInside" id="OkV-nj-aeh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="8zc-bx-emz" id="SJq-x7-M8D"/>
+                        <outlet property="repasswordTextField" destination="Es5-0q-k0I" id="z03-qH-7Zv"/>
+                        <outlet property="usernameTextField" destination="tKC-Qn-8Bz" id="3ep-1s-4zy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wWU-Hc-mcS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="198" y="935"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="c2x-mX-fAH">
@@ -104,7 +176,6 @@
         <!--Messages Ctrl-->
         <scene sceneID="k1J-cy-ZlP">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="50f-dx-pBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="MessagesView" id="EJg-vD-I2s" customClass="MessagesCtrl" customModule="SensChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hDf-jE-jbO"/>
@@ -135,6 +206,7 @@
                         <outlet property="textField" destination="6gn-fl-8TY" id="BqS-aH-nXx"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="50f-dx-pBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1104" y="467"/>
         </scene>

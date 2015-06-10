@@ -13,6 +13,7 @@ class MessagesCtrl: UIViewController{
     @IBOutlet weak var textField: UITextField!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
     }
     @IBAction func sendMessage(sender: AnyObject) {
         var username = "Jagaa"

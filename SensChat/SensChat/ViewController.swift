@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var password: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +25,27 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func startClicked(sender: AnyObject) {
-        var vc = self.storyboard?.instantiateViewControllerWithIdentifier("MainTabView") as! MainTabView
+    @IBAction func loginClicked(sender: AnyObject) {
+        if(!username.text.isEmpty && !password.text.isEmpty){
+            FireService.sharedInstance.loginUser(username.text, password: password.text){
+                (result) in
+                if(result == "OK"){
+                    var vc = self.storyboard?.instantiateViewControllerWithIdentifier("MainTabView") as! MainTabView
+                    self.presentViewController(vc, animated: true, completion: nil)
+                }else{
+                    var alert = UIAlertView(title: "Error", message: "Login is Failed!!!", delegate: self, cancelButtonTitle: "OK")
+                    alert.show();
+                }
+            }
+            
+        }else{
+            var alert = UIAlertView(title: "Error", message: "Please insert all field", delegate: self, cancelButtonTitle: "OK")
+            alert.show();
+        }
+        
+    }
+    @IBAction func registerClicked(sender: AnyObject) {
+        var vc = self.storyboard?.instantiateViewControllerWithIdentifier("RegisterView") as! RegisterCtrl
         self.presentViewController(vc, animated: true, completion: nil)
     }
 }

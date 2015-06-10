@@ -50,4 +50,33 @@ class FireService: NSObject {
             
         })
     }
+    
+    
+    
+//================ Register User ======================
+    func registerUser(username:String, password:String){
+        var data:NSDictionary = ["username":username, "password":password]
+        var userdb = firebase.childByAppendingPath("users")
+        var tmp = userdb.childByAutoId()
+        tmp.setValue(data)
+    }
+    
+//================ Login User ======================
+    func loginUser(username:String, password:String){
+        var data:NSDictionary = ["username":username, "password":password]
+        var userdb = firebase.childByAppendingPath("users")
+        userdb.authUser(username, password: password) { (err, data) in
+            println("Login is complete! >> \(data)")
+        }
+    }
+    
+    func loginUser(username: String, password:String, completion: (result: String) -> Void) {
+        var data:NSDictionary = ["username":username, "password":password]
+        var userdb = firebase.childByAppendingPath("users")
+        userdb.authUser(username, password: password) { (err, data) in
+            println("Login is complete! >> \(data)")
+            completion(result: "OK")
+        }
+    }
+    
 }

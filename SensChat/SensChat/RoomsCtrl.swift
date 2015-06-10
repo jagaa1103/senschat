@@ -11,6 +11,7 @@ import UIKit
 
 class RoomsCtrl: UIViewController {
     override func viewDidLoad() {
+        super.viewDidLoad()
     }
     @IBAction func goMessagesClicked(sender: AnyObject) {
         var vc = self.storyboard?.instantiateViewControllerWithIdentifier("MessagesView") as! MessagesCtrl
